@@ -1,0 +1,99 @@
+doctype html
+html(lang="zh-CN")
+
+    head
+
+        include includes/header.pug
+        include includes/scripts.pug
+
+    body
+
+        include includes/navbar.pug
+
+        // summary of product DIU
+        include includes/summary.pug
+
+        include includes/feature_summary.pug
+        -
+          const summaries = [
+            {
+              title: "启发式数据检索",
+              summary: "可根据当前搜索的关键词联想后续搜索关键词，并支持简单的逻辑运算进行数据过滤",
+              icon: "bi bi-search",
+              details_link: "feature_details.html#v-pills-search-tab",
+            }, {
+              title: "数据图表化和智能编排",
+              summary: "根据用户的数据搜索意图和搜索结果进行数据图表智能编排",
+              icon: "bi bi-bar-chart",
+              details_link: "feature_details.html#v-pills-graph-tab",
+            }, {
+              title: "开放式数据源",
+              summary: "用户可自己上传或连接自己的数据源，支持多种数据库，EXCEL/CSV等表格文件和第三方数据API等数据源",
+              icon: "bi bi-server",
+              details_link: "feature_details.html#v-pills-sources-tab",
+            }, {
+              title: "数据社区",
+              summary: "用户可收藏数据查询和数据对象，并将其和其他用户或用户组进行分享",
+              icon: "bi bi-people",
+              details_link: "feature_details.html#v-pills-community-tab",
+            }, {
+              title: "SAAS和独立布署",
+              summary: "根据用户或客户须求，可选用SAAS模式的服务或进行服务独立布署",
+              icon: "bi bi-hdd-stack",
+              details_link: "feature_details.html#v-pills-saas-tab",
+            }, {
+              title: "数据发布与交易",
+              summary: "用户可上传或连接到自己的数据源，并发布到数据市场, 也可以订购其他用户发布的数据",
+              icon: "bi bi-shop-window",
+              details_link: "feature_details.html#v-pills-market-tab",
+            }
+          ]
+
+        // Features section
+        section#features.py-5.border-bottom
+            .container.px-5.my-5
+                .row.gx-5
+                    each item in summaries
+                        + feature_summary(item.title, item.summary, item.icon, item.details_link)
+
+        include includes/application_scenario.pug
+        -
+          const scenarios = [
+            {
+              title: "个人、中小企业或组织",
+              content: "Hello World",
+              cover: "assets/img_placeholder.png",
+              cover_position: "left",
+            }, {
+              title: "大型公司、企业集团和政府部门",
+              content: "Foobar",
+              cover: "assets/img_placeholder.png",
+              cover_position: "right",
+            }, {
+              title: "大数据公司",
+              content: "Coming soon",
+              cover: "assets/img_placeholder.png",
+              cover_position: "left",
+            }, {
+              title: "行业、产业数据",
+              content: "Coming soon",
+              cover: "assets/img_placeholder.png",
+              cover_position: "right",
+            }, {
+              title: "金融、宏观经济等其它社会共公数据",
+              content: "abc",
+              cover: "assets/img_placeholder.png",
+              cover_position: "left",
+            }
+          ]
+
+        // application scenarios section
+        section.bg-light.py-2.border-bottom
+            .container.px-5.my-5
+                .text-center.mb-5
+                    h3.fw-bolder 应用场景
+                .row.gx-5.justify-content-center
+                    each item in scenarios
+                      + application_scenario(item.title, item.content, item.cover, item.cover_position)
+
+        include includes/footer.pug

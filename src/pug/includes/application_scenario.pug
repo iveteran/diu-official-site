@@ -1,0 +1,17 @@
+//- Application scenario
+mixin application_scenario(title, content, cover, cover_position)
+  .card.mb-5.mb-xl-5
+      .card-body.p-5
+          .middle.text-uppercase.fw-bold.text-muted.text-center #{title}
+          .row.mt-4
+              case cover_position
+                  when "left"
+                      .col-md-4
+                          img.rounded.float-right(src=cover, width="100%", weight="400")
+                      .col-md-8
+                          .text #{content}
+                  when "right"
+                      .col-md-8
+                          .text #{content}
+                      .col-md-4
+                          img.rounded.float-right(src=cover, width="100%", weight="400")

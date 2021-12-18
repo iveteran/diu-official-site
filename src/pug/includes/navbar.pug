@@ -1,0 +1,18 @@
+//- Responsive navbar
+nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.bg-dark
+    .container-fluid.mx-2
+        img(src="assets/favicon.ico" width="30" height="30" style="margin-right: 8px; filter: invert(100%);")
+        a.navbar-brand(href='/') 矩阵工场 | Matrixworks
+        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+                li.nav-item
+                    a.nav-link.active(aria-current='page', href='/') 首页
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false") 产品与服务
+                    ul.dropdown-menu(aria-labelledby="navbarDropdown" style="background-color: gray;")
+                        li
+                            a.dropdown-item(href='/') DIU
+                li.nav-item
+                    a.nav-link(href='/about.html') 公司简介

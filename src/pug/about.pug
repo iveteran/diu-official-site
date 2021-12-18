@@ -1,0 +1,23 @@
+doctype html
+
+html(lang='zh-CN')
+
+    head
+
+        include includes/header.pug
+        include includes/scripts.pug
+
+    body
+        include includes/navbar.pug
+
+        // content
+        .container.py-5.px-2.my-5
+            p - 矩阵工场（深圳）信息技术有限公司，成立于2019年，是一家专注于数据管理、数据安全以及数据智能化搜索的公司。
+            p - 公司立足于技术创新、工程可靠性，为客户提供优质的技术实施和服务。
+            p - 目前主要的产品和服务为
+                a.link-secondary(href="/") DIU
+            br
+            p Matrixworks - Make data alive
+
+        .fixed-bottom
+            include includes/footer_simple.pug

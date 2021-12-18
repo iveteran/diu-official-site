@@ -1,0 +1,10 @@
+mixin feature_summary(title, content, prefix_icon, details_link)
+  .col-lg-4.mb-5.mb-lg-3
+      .feature.bg-primary.bg-gradient.text-white.rounded-3.mb-3
+          .i(class=prefix_icon)
+      h2.h4.fw-bolder #{title}
+      p
+          | #{content}
+
+      a.text-decoration-none(href=details_link)
+          | 了解详情

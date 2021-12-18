@@ -1,0 +1,72 @@
+doctype html
+html(lang="zh-CN")
+
+    head
+
+        include includes/header.pug
+        include includes/scripts.pug
+
+        include includes/feature_details_tabs.pug
+        -
+          var tabs = [
+            {
+              tab_id: "v-pills-search-tab",
+              tab_target: "#v-pills-search",
+              tab_content_id: "v-pills-search",
+              title: "启发式数据检索",
+              content: "Coming soon",
+              is_active: false,
+            }, {
+              tab_id: "v-pills-graph-tab",
+              tab_target: "#v-pills-graph",
+              tab_content_id: "v-pills-graph",
+              title: "数据图表化和智能编排",
+              content: "Hello World",
+              is_active: false,
+            }, {
+              tab_id: "v-pills-sources-tab",
+              tab_target: "#v-pills-sources",
+              tab_content_id: "v-pills-sources",
+              title: "开放式数据源",
+              content: "开放式数据源",
+              is_active: false,
+            }, {
+              tab_id: "v-pills-community-tab",
+              tab_target: "#v-pills-community",
+              tab_content_id: "v-pills-community",
+              title: "数据社区",
+              content: "数据社区",
+              is_active: false,
+            }, {
+              tab_id: "v-pills-saas-tab",
+              tab_target: "#v-pills-saas",
+              tab_content_id: "v-pills-saas",
+              title: "SAAS和独立布署",
+              content: "SAAS和独立布署",
+              is_active: false,
+            }, {
+              tab_id: "v-pills-market-tab",
+              tab_target: "#v-pills-market",
+              tab_content_id: "v-pills-market",
+              title: "数据发布与交易",
+              content: "数据发布与交易",
+              is_active: false,
+            }
+          ]
+
+        script.
+          function setActiveTab() {
+            let tab_id = window.location.hash.substr(1);
+            let tab = document.getElementById(tab_id);
+            tab.click()
+          }
+
+    body(onload="setActiveTab()")
+
+        include includes/navbar.pug
+
+        .container-fluid.py-5.px-2.my-5
+            + feature_details_tabs(tabs)
+
+        .fixed-bottom
+            include includes/footer_simple.pug
