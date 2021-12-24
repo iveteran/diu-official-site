@@ -4,13 +4,13 @@ mixin feature_details_tabs(tabs)
             each item in tabs
                 case item.is_active
                     when true
-                        button.nav-link.active(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right;") #{item.title}
+                        button.nav-link.active(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right; width: 200px;") #{item.title}
                     default
-                        button.nav-link(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right;") #{item.title}
+                        button.nav-link(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right; width: 200px;") #{item.title}
         .tab-content.mx-5(id="v-pills-tabContent")
             each item in tabs
                 case item.is_active
                     when true
-                        .tab-pane.fade.show.active(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
+                        .tab-pane.fade.lh-lg.show.active(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
                     default
-                        .tab-pane.fade(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
+                        .tab-pane.fade.lh-lg(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
