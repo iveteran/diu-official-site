@@ -48,3 +48,9 @@ Thumbs.db
 *.mov
 *.wmv
 
+# vim swap files
+*.swp
+*.swo
+
+# node.js temporary files
+package-lock.json
