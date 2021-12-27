@@ -18,6 +18,10 @@ mixin show_feature_title(item)
 mixin show_feature_details(item)
     case item.is_active
         when true
-            .tab-pane.fade.lh-lg.show.active(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
+            .tab-pane.fade.lh-lg.show.active(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id)
+                p #{item.content}
+                img.rounded.float-right(src=item.figure.source, width=item.figure.width, height=item.figure.height)
         default
-            .tab-pane.fade.lh-lg(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
+            .tab-pane.fade.lh-lg(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id)
+                p #{item.content}
+                img.rounded.float-right(src=item.figure.source, width=item.figure.width, height=item.figure.height)
