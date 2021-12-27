@@ -68,11 +68,12 @@ html(lang="zh-CN")
           ]
 
         script.
-          function setActiveTab() {
-            let tab_id = window.location.hash.substr(1);
-            let tab = document.getElementById(tab_id);
-            tab.click()
-          }
+            function setActiveTab() {
+                // set the first tab as default active tab
+                let tab_id = window.location.hash.substr(1);
+                let tab = document.getElementById(tab_id);
+                tab.click()
+            }
 
     body(onload="setActiveTab()")
 
