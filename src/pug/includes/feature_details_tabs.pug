@@ -3,15 +3,21 @@ mixin feature_details_tabs(tabs)
     .class.d-flex.align-items-start
         .nav.flex-column.nav-pills(id="v-pills-tab" role="tablist" aria-orientation="vertical")
             each item in tabs
-                case item.is_active
-                    when true
-                        button.nav-link.active(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right; width: 200px;") #{item.title}
-                    default
-                        button.nav-link(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right; width: 200px;") #{item.title}
+                + show_feature_title(item)
         .tab-content.mx-5(id="v-pills-tabContent")
             each item in tabs
-                case item.is_active
-                    when true
-                        .tab-pane.fade.lh-lg.show.active(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
-                    default
-                        .tab-pane.fade.lh-lg(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
+                + show_feature_details(item)
+
+mixin show_feature_title(item)
+    case item.is_active
+        when true
+            button.nav-link.active(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right; width: 200px;") #{item.title}
+        default
+            button.nav-link(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right; width: 200px;") #{item.title}
+
+mixin show_feature_details(item)
+    case item.is_active
+        when true
+            .tab-pane.fade.lh-lg.show.active(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
+        default
+            .tab-pane.fade.lh-lg(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id) #{item.content}
