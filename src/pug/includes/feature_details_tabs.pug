@@ -19,12 +19,15 @@ mixin show_feature_details(item)
     case item.is_active
         when true
             .tab-pane.fade.lh-lg.show.active(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id)
-                + show_feature_details_content(item.content, item.figures)
+                + show_feature_details_content(item.contents, item.figures)
         default
             .tab-pane.fade.lh-lg(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id)
-                + show_feature_details_content(item.content, item.figures)
+                + show_feature_details_content(item.contents, item.figures)
 
-mixin show_feature_details_content(content, figures)
-    p #{content}
+mixin show_feature_details_content(contents, figures)
+    ul.list-group.list-group-flush
+        each content in contents
+            li.list-group-item
+                p #{content}
     each fig in figures
         img.rounded.float-right(src=fig.source, width=fig.width, height=fig.height)
