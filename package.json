@@ -1,6 +1,6 @@
 {
-    "title": "Offical site of Matrixworks",
-    "name": "fmx-site",
+    "title": "A simple site template",
+    "name": "simple-site",
     "version": "1.0.0",
     "scripts": {
         "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
@@ -12,11 +12,8 @@
         "start": "npm run build && node scripts/start.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
     },
-    "description": "Offical site of Matrixworks",
+    "description": "A simple site template witten in Javascript with PUG and Bootstrap",
     "keywords": [
-        "matrixworks",
-        "diu",
-        "data"
     ],
     "homepage": "https://matrixworks.cn/",
     "author": "yu@matrix.works",
