@@ -125,4 +125,20 @@ html(lang="en")
                     each item in scenarios
                       + application_scenario(item.title, item.contents, item.cover, item.cover_position)
 
+        // looking for partners section
+        section.bg-light.py-2.border-bottom
+            .container.px-5.my-5
+                .text-center.mb-5
+                    h3.fw-bolder Looking for Business Partners
+                .row.gx-5.justify-content-center
+                    .card.mb-5.mb-xl-5
+                        .card-body.p-5
+                            .middle.text-muted.text-center
+                                p We are looking for business partners
+                                br
+                                p Do you have interest in our product? Please feel free to contact Us.
+                                br
+                                a(href="mailto:contact@matrix.works") contact@matrix.works
+                                //- p contact [AT] matrix.works
+
         include includes/footer.pug
