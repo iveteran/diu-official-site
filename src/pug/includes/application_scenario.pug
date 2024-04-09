@@ -1,37 +1,38 @@
 //- Application scenario
 mixin application_scenario(title, contents, cover, cover_position)
+
+  mixin show_contents(contents)
+      ul.list-group.list-group-flush
+          each content in contents
+             li.list-group-item
+                 .text.lh-lg #{content}
+
+  mixin show_cover(cover, alt, width="100%", height="100%")
+      img(src=cover, alt=alt, width=width, height=height).rounded
+
   .card.mb-5.mb-xl-5
       .card-body.p-5
-          .middle.text-uppercase.fw-bold.text-muted.text-center #{title}
-          .row.mt-4
-              case cover_position
-                  when "left"
-                      .col-md-8
-                          img.rounded.float-right(src=cover, width="100%", height="400")
-                      .col-md-4
-                          ul.list-group.list-group-flush
-                              each content in contents
-                                 li.list-group-item
-                                     .text.lh-lg #{content}
-                  when "right"
-                      .col-md-4
-                          ul.list-group.list-group-flush
-                              each content in contents
-                                 li.list-group-item
-                                     .text.lh-lg #{content}
-                      .col-md-8
-                          img.rounded.float-right(src=cover, width="100%", height="400")
-                  when "top"
-                    div
-                      img.rounded.float-right(src=cover, width="100%", height="600")
-                      ul.list-group.list-group-flush
-                          each content in contents
-                             li.list-group-item
-                                 .text.lh-lg #{content}
-                  when "bottom"
-                    div
-                      ul.list-group.list-group-flush
-                          each content in contents
-                             li.list-group-item
-                                 .text.lh-lg #{content}
-                      img.rounded.float-right(src=cover, width="100%", height="600")
+          .middle.h4.text-capitalize.text-muted.text-center #{title}
+          case cover_position
+              when "left"
+                .row.mt-4
+                  .col-xl-8
+                      + show_cover(cover, title)
+                  .col-xl-4
+                      + show_contents(contents)
+              when "right"
+                .row.mt-4
+                  .col-xl-4
+                      + show_contents(contents)
+                  .col-xl-8
+                      + show_cover(cover, title)
+              when "top"
+                div
+                  .m-md-5.text-center
+                      + show_cover(cover, title)
+                  + show_contents(contents)
+              when "bottom"
+                div
+                  + show_contents(contents)
+                  .m-md-5.text-center
+                      + show_cover(cover, title)

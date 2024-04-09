@@ -1,8 +1,10 @@
 //- Responsive navbar
 nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.bg-dark
     .container-fluid.mx-2
-        img(src="assets/favicon.ico" width="30" height="30" style="margin-right: 8px; filter: invert(100%);")
-        a.navbar-brand(href='/') Matrixworks | DIU
+        a.navbar-brand(href='/')
+          .d-flex.justify-content-start
+            img(src="assets/favicon.ico" width="30" height="30" style="margin-right: 8px; filter: invert(100%);")
+            span Matrixworks | DIU
         button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
             span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse

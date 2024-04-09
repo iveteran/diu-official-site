@@ -45,6 +45,8 @@ html(lang="en")
               title: "Data publishing and subscribing",
               summary: "Users can upload or connect to their own data sources and publish to the data marketplace, and can also order data published by other users",
               icon: "bi bi-shop-window",
+              //icon_bg_color: "bg-success",
+              //icon_color: "text-danger",
               details_link: "feature_details.html#v-pills-market-tab",
             }
           ]
@@ -54,7 +56,9 @@ html(lang="en")
             .container.px-5.my-5
                 .row.gx-5
                     each item in summaries
-                        + feature_summary(item.title, item.summary, item.icon, item.details_link)
+                        - let icon_bg_color = item.icon_bg_color || "bg-primary"
+                        - let icon_color = item.icon_color || "text-white"
+                        + feature_summary(item.title, item.summary, item.icon, icon_bg_color, icon_color, item.details_link)
 
         include includes/application_scenario.pug
         -

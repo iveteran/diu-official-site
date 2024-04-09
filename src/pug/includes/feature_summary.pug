@@ -1,6 +1,6 @@
-mixin feature_summary(title, content, prefix_icon, details_link)
+mixin feature_summary(title, content, prefix_icon, prefix_icon_bg_color, prefix_icon_color, details_link)
   .col-lg-4.mb-5.mb-lg-3
-      .feature.bg-primary.bg-gradient.text-white.rounded-3.mb-3
+      .feature.bg-gradient.rounded-3.mb-3(class=prefix_icon_bg_color class=prefix_icon_color)
           .i(class=prefix_icon)
       h2.h4.fw-bolder #{title}
       p

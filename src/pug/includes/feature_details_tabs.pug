@@ -1,33 +1,59 @@
 mixin feature_details_tabs(tabs)
     .middle.text-capitalize.fw-bold.fs-4.text-muted.text-center.mb-3 DIU Main features detials
-    .container.class.d-flex.align-items-start
-        .nav.flex-column.nav-pills(id="v-pills-tab" role="tablist" aria-orientation="vertical")
-            each item in tabs
-                + show_feature_title(item)
-        .tab-content.mx-5(id="v-pills-tabContent")
-            each item in tabs
-                + show_feature_details(item)
+    .container
+      .row.mt-4
+        .col-xl-3
+          .bg-light
+              .nav.flex-column.nav-pills(id="v-pills-tab" role="tablist" aria-orientation="vertical")
+                  each item in tabs
+                      + show_feature_title(item)
+        .col-xl-9
+          .tab-content.mx-2(id="v-pills-tabContent")
+              each item in tabs
+                  + show_feature_details(item)
 
 mixin show_feature_title(item)
+
+    mixin show_title_button(item)
+        button.nav-link(
+            id=item.tab_id
+            data-bs-toggle="pill"
+            data-bs-target=item.tab_target
+            type="button"
+            role="tab"
+            aria-controls=item.tab_content_id
+            aria-selected="true"
+        ).text-end #{item.title}
+
     case item.is_active
         when true
-            button.nav-link.active(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right; width: 200px;") #{item.title}
+            + show_title_button(item).active
         default
-            button.nav-link(id=item.tab_id data-bs-toggle="pill" data-bs-target=item.tab_target type="button" role="tab" aria-controls=item.tab_content_id aria-selected="true" style="text-align: right; width: 200px;") #{item.title}
+            + show_title_button(item)
 
 mixin show_feature_details(item)
+
+    mixin show_feature_details_content(contents, figures, figures_alt)
+        ul.list-group.list-group-flush
+            each content in contents
+                li.list-group-item
+                    p #{content}
+        .text-center
+            each fig in figures
+                - let width = fig.width || "90%"
+                - let height = fig.height || "90%"
+                img(src=fig.source, alt=figures_alt, width=width, height=height).rounded.img-fluied
+
+    mixin show_content_pane(item)
+        .tab-pane.fade.lh-lg(
+            id=item.tab_content_id
+            role="tabpanel"
+            aria-labelledby=item.tab_id
+        )
+            + show_feature_details_content(item.contents, item.figures, item.title)
+
     case item.is_active
         when true
-            .tab-pane.fade.lh-lg.show.active(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id)
-                + show_feature_details_content(item.contents, item.figures)
+            + show_content_pane(item).show.active
         default
-            .tab-pane.fade.lh-lg(id=item.tab_content_id role="tabpanel" aria-labelledby=item.tab_id)
-                + show_feature_details_content(item.contents, item.figures)
-
-mixin show_feature_details_content(contents, figures)
-    ul.list-group.list-group-flush
-        each content in contents
-            li.list-group-item
-                p #{content}
-    each fig in figures
-        img.rounded.float-right(src=fig.source, width=fig.width, height=fig.height)
+            + show_content_pane(item)
