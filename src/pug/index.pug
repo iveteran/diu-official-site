@@ -1,5 +1,5 @@
 doctype html
-html(lang="zh-CN")
+html(lang="en")
 
     head
 
@@ -17,33 +17,33 @@ html(lang="zh-CN")
         -
           const summaries = [
             {
-              title: "启发式数据检索",
-              summary: "可根据当前搜索的关键词联想后续搜索关键词，并支持简单的逻辑运算进行数据过滤",
+              title: "Heuristic retrieval",
+              summary: "It can associate subsequent search keywords according to the current search keywords, and supports simple logical operations for data filtering",
               icon: "bi bi-search",
               details_link: "feature_details.html#v-pills-search-tab",
             }, {
-              title: "数据图表化和智能编排",
-              summary: "根据用户的数据搜索意图和搜索结果进行数据图表智能编排",
+              title: "Data charting and intelligent arrangement",
+              summary: "According to the user's data search intention and search results, to arrange data chart intelligently",
               icon: "bi bi-bar-chart",
               details_link: "feature_details.html#v-pills-graph-tab",
             }, {
-              title: "开放式数据源",
-              summary: "用户可自己上传或连接自己的数据源，支持多种数据库，EXCEL/CSV等表格文件和第三方数据API等数据源",
+              title: "Open data source",
+              summary: "Users can upload or connect their own data sources, support a variety of databases, EXCEL/CSV/PDF table files and third-party data APIs data sources",
               icon: "bi bi-server",
               details_link: "feature_details.html#v-pills-sources-tab",
             }, {
-              title: "数据社区",
-              summary: "用户可收藏数据查询和数据对象，并将其和其他用户或用户组进行分享",
+              title: "Data community",
+              summary: "Users can bookmark data queries and data objects and share them with other users or groups",
               icon: "bi bi-people",
               details_link: "feature_details.html#v-pills-community-tab",
             }, {
-              title: "SAAS和私有布署",
-              summary: "根据用户或客户须求，可选用SAAS模式的服务或进行服务私有布署",
+              title: "SAAS and Private deployment",
+              summary: "According to the requirements of users or customers, you can choose a SAAS model of service or service private deployment",
               icon: "bi bi-hdd-stack",
               details_link: "feature_details.html#v-pills-saas-tab",
             }, {
-              title: "数据发布与交易",
-              summary: "用户可上传或连接到自己的数据源，并发布到数据市场, 也可以订购其他用户发布的数据",
+              title: "Data publishing and subscribing",
+              summary: "Users can upload or connect to their own data sources and publish to the data marketplace, and can also order data published by other users",
               icon: "bi bi-shop-window",
               details_link: "feature_details.html#v-pills-market-tab",
             }
@@ -60,64 +60,59 @@ html(lang="zh-CN")
         -
           const scenarios = [
             {
-              title: "面向个人、中小企业或组织的数据管理",
+              title: "Data management for individuals, smes and organizations",
               contents: [
-                "个人、中小企业或组织主要以Excel文件为主，此数据的管理形式是数据的分散性、离线性、文档版本混乱等特点，随着时间的推移越难管理，" +
-                  "导致经常在数据使用中使用了错误的或不一致的数据。" +
-                  "DIU可以对这些结构化数据文件进行统一的管理，给它们建立索引，并且可在线智能查询、查看数据，并且查询的结果可以进行图表化显示。" ,
-                "用户可以通过DIU的客户端软件便捷地上传Excel/CSV文档，DIU会对这些文件进行保存、分析并且生成索引数据。" +
-                  "DIU也可以对Word、PDF文件中的表格数据进行提取并上述处理。对于重复的或部份重复的文档会对其去重和归并，以及进行历史版本管理。",
-                "DIU并不是用来代替Excel的，而是对大量Excel文档进行后期管理，包括数据的权限管理，以及线上查询、发布和分享。"
+                "Individuals, small and medium-sized enterprises or organizations mainly use Excel files. " +
+                "The management of these data are characterized by the dispersion, linearity, and confusion of document versions. " +
+                "As time goes by, incorrect or inconsistent data is often used in the use of data." +
+                  "DIU can manage these structured data files in a unified manner, build indexes for them, and can query and view data intelligently online, and the query results can be displayed graphically." ,
+                "Users can easily upload Excel/CSV files through DIU client software, and DIU will save, analyze and generate index data for these files." +
+                  "DIU can also extract and process the table data in Word and PDF files. Duplicate or partially duplicate documents are de-duplicated and merged, as well as historical version management.",
+                "DIU is not used to replace Excel, but to perform post-management for a large number of Excel documents, including permission management of data, as well as online query, publishing and sharing."
               ],
               cover: "assets/images/file_table_data.png",
               cover_position: "left",
             }, {
-              title: "大型公司、企业集团和政府部门数据的归集管理",
+              title: "Data collection and management of large companies, enterprise groups and government departments",
               contents: [
-                "随着时行的推移，大型公司、企业集团等的IT系统越来越多，各自IT系统中数据库以及数据展示系统各自独立分离，" +
-                  "难以对它们的数据进行统一的对比、检索、统计分析和图表化展示。" +
-                  "使用DIU可以对不同的IT数据库进行统一的归集管理、数据智能查询和数据图表化显示。",
-                "支持主流的数据库，如MySQL、PostgreSQL、Oracle、SQLServer，其它数据库可应客户要求定制开发"
+                "With the passage of time, there are more and more IT systems of large companies and enterprise groups, and the databases and data display systems in their respective IT systems are independent and separate, " +
+                  "It is difficult to make unified comparison, retrieval, statistical analysis and graphical presentation of their data." +
+                  "Using DIU, different IT databases can be unified collection management, data intelligent query and data graphical display.",
+                "Support mainstream databases, such as MySQL, PostgreSQL, Oracle, SQLServer, other databases can be customized according to customer requirements"
               ],
               cover: "assets/images/db_table_data.png",
               cover_position: "right",
             }, {
-              title: "从事于数据处理的公司或开发者",
+              title: "The companies or developers engaged in data processing",
               contents: [
-                "对于那些专注于数据挖掘、大数据处理等数据处理的公司或开发者，可以使用DIU对他们的数据进行管理，" +
-                "从而减小他们对这些非核心系统的研发投入，并且可以将数据发布到数据市场，" +
-                "以及和其他数据开发者或使用者进行数据分享和交流。"
+                "For those companies or developers who focus on data processing such as data mining and big data processing, they can use DIU to manage their data." +
+                "So they can reduce their R&D investment in these non-core systems and release the data to the data marketplace," +
+                "And share and communicate with other data developers or users."
               ],
               cover: "assets/images/for_data_developer.png",
               cover_position: "left",
             }, {
-              title: "行业、产业和社会公共数据的发布和交易",
+              title: "Publishing and subscribing of public data for industry and society",
               contents: [
-                "DIU 可为行业、产业数据拥有者提供面向数据使用者的数据发布、检索、可视化等数据便捷性、智能化使用功能，" +
-                  "数据提供者只需专注于行业、产业等数据的采集和清洗等核心功能。",
-                "DIU 支持以数据库、数据 API、Excel/CSV 等形式的数据源。",
-                "DIU 的独立私有布署方式可使数据拥有者完全自主的控制自己的数据。",
-                "数据拥有者可以将数据发布到 DIU 的数据市场进行交易。",
-                "更加精准数据检索，使数据需求者更容易找到数据发布者的数据。"
+                "DIU can provide industry and industrial data owners with data publishing, retrieval, visualization and using data conveniently and intelligently for data users." +
+                  "Data providers only need to focus on core functions such as collection and cleaning of industry and other data.",
+                "DIU supports data sources in the form of databases, data APIs, Excel/CSV, etc.",
+                "DIU's independent private distribution gives data owners complete control over their own data.",
+                "Data owners can publish data to DIU's data marketplace for subscribing.",
+                "More accurate data retrieval makes it easier for data demanders to find data from data publishers."
               ],
               cover: "assets/images/industrial_data.png",
               cover_position: "right",
             }, {
-              title: "金融、宏观经济等其它社会共公数据",
+              title: "Financial, macroeconomic and social public data",
               contents: [
-                "对于投资机构、个人投资者、经济或社会科研人员等，可以通过DIU对各种不同数据源的数据归集，大幅提高数据使用效率，" +
-                  "并且可以将自己研究所得的数据进行线上分享或发布到数据市场供其他人订购。",
-                "数据发布机构可以使用 DIU 代替以往在官网以网页或 Excel 文档形式的数据发布，可避免在网站的层层链接中寻找发布的数据。",
-                "可以通过 DIU 的 PC 客户端软件快速、便捷地上传数据文档。"
+                "For investment institutions, individual investors, economic or social researchers, etc., the DIU can collect data from a variety of different data sources to greatly improve the efficiency of data using, " +
+                  "And they can share their research data online or publish it to the data marketplace for others to order.",
+                "Data publishing organizations can use DIU to replace the previous data release in the form of web pages or Excel documents on the official website, which can avoid searching for published data in the layers of links on the website.",
+                "Data files can be uploaded quickly and easily through DIU's PC client software."
               ],
               cover: "assets/images/for_finance.png",
               cover_position: "left",
-            }, {
-              title: "DIU与相似产品的功能对比",
-              contents: [
-              ],
-              cover: "assets/images/diu_compares_with_others.png",
-              cover_position: "top",
             }
           ]
 
@@ -125,7 +120,7 @@ html(lang="zh-CN")
         section.bg-light.py-2.border-bottom
             .container.px-5.my-5
                 .text-center.mb-5
-                    h3.fw-bolder 应用场景
+                    h3.fw-bolder Application scenarios
                 .row.gx-5.justify-content-center
                     each item in scenarios
                       + application_scenario(item.title, item.contents, item.cover, item.cover_position)

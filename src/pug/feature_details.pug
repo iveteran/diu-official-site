@@ -1,5 +1,5 @@
 doctype html
-html(lang="zh-CN")
+html(lang="en")
 
     head
 
@@ -13,13 +13,13 @@ html(lang="zh-CN")
               tab_id: "v-pills-search-tab",
               tab_target: "#v-pills-search",
               tab_content_id: "v-pills-search",
-              title: "启发式数据检索",
+              title: "Heuristic data retrieval",
               contents: [
-                "可根据当前搜索的关键词联想可能的后续关键词，输入的关键词越多联想的关键词越精准，" +
-                    "减小用户记忆数据关键词的负担，大幅提高数据检索的效率。",
-                "支持简单的逻辑运算（如=、>、<）和时间过滤（如\"2021\"年指只取2021的数据，\"2010-06 today\"表示取2010年6月到当天的数据）。",
-                "用户数据检索记忆功能，DIU 可根据用户检索记录进行动态地数据权重变更，从而更快捷检索用户想要的数据。",
-                "提供的数据结果关联工具栏，可以对不同类别的数据检索结果关联不同的工具栏，从而更便捷对数据进行重新过滤。"
+                "Association of possible subsequent keywords according to the current search keyword, the more keywords entered, the more accurate the association keyword," +
+                    "Reduce the burden of users memorizing data keywords, and greatly improve the efficiency of data retrieval.",
+                "Use simple logic operations (e.g. =, >, <) and time filtering (e.g. \"2021\" year refers to data from 2021 only, \"2010-06 today\" means data from June 2010 to the current day).",
+                "User data retrieval memory function, DIU can dynamically change the data weight according to the user retrieval record, so as to retrieve the user's desired data more quickly.",
+                "For data results association toolbar, you can associate different toolbars for different categories of data retrieval results, so that it is easier to re-filter data."
               ],
               figures: [
                 {source: "assets/images/instant_search.png", width: "800", height: "450"}
@@ -29,11 +29,11 @@ html(lang="zh-CN")
               tab_id: "v-pills-graph-tab",
               tab_target: "#v-pills-graph",
               tab_content_id: "v-pills-graph",
-              title: "数据图表化和智能编排",
-              contents: ["根据用户的数据搜索意图和搜索结果进行数据图表智能编排，" +
-              "自动识别检索的结果是时间序列数据、分组数据、列表数据或其它数据，并且使用相应的图表显示它们。" +
-              "如将同一数据对象的不同属性数据的结果或不同对象的相同属性编排在同一个图表中，以及相关性的数据图表并列在一起。" +
-              "还可以对结果图表通过拖拽进行重新编排。"
+              title: "Data charting and intelligent arrangement",
+              contents: ["According to the user's data search intention and search results to arrange data chart intelligently, " +
+              "Automatically recognizes the results of the retrieval as time series data, grouped data, tabular data, or other data, and displays them using the corresponding graph. " +
+              "The results of different properties of the same data object or the same properties of different objects are arranged in the same chart, and the related data charts are juxtaposed. " +
+              "The resulting chart can be rearranged by dragging and dropping."
               ],
               figures: [
                 {source: "assets/images/result_arrange_ts.png", width: "800", height: "450"},
@@ -44,9 +44,9 @@ html(lang="zh-CN")
               tab_id: "v-pills-sources-tab",
               tab_target: "#v-pills-sources",
               tab_content_id: "v-pills-sources",
-              title: "开放式数据源",
+              title: "Open data source",
               contents: [
-                "用户可自己上传或连接自己的数据源，支持多种主流数据库、EXCEL/CSV等表格文件和第三方数据API等数据源。"
+                "Users can upload or connect their own data sources, support a variety of mainstream databases, EXCEL/CSV and other table files and third-party data apis and other data sources."
               ],
               figures: [
                 {source: "assets/images/extdata.png", width: "800", height: "450"}
@@ -56,10 +56,10 @@ html(lang="zh-CN")
               tab_id: "v-pills-community-tab",
               tab_target: "#v-pills-community",
               tab_content_id: "v-pills-community",
-              title: "数据社区",
+              title: "Data community",
               contents: [
-                "DIU 支持用户组管理，用户可以创建或加入用户组。",
-                "用户可收藏数据查询和数据对象，并将其和其他用户或用户组进行分享，接收分享的用户就可以重复使用其他用户编写好的检索语句。"
+                "DIU supports user group management. Users can create or join groups.",
+                "Users can save data queries and data objects, and share them with other users or groups, and users who receive the share can reuse the search statements written by other users."
               ],
               figures: [
                 {source: "assets/images/data_sharing.png", width: "800", height: "450"}
@@ -69,10 +69,10 @@ html(lang="zh-CN")
               tab_id: "v-pills-saas-tab",
               tab_target: "#v-pills-saas",
               tab_content_id: "v-pills-saas",
-              title: "SAAS和私有布署",
+              title: "SAAS and Private deployment",
               contents: [
-                "根据用户或客户须求，可选用SAAS模式的服务或进行服务私有布署，对于个人、中小企业或组织可以选择SAAS，它更加高效和经济实惠。",
-                "对于中大型企业或组织，独立私有布署可以提供更高的数据安全性、更好的用户体验和专有的技术支持。"
+                "According to the requirements of users or customers, SAAS model services can be selected or private deployment of services, for individuals, small and medium-sized enterprises or organizations can choose SAAS, which is more efficient and cost-effective.",
+                "For medium and large enterprises or organizations, independent private deployment can provide higher data security, better user experience, and proprietary technical support."
               ],
               figures: [
                 {source: "assets/images/deploy_saas.png", width: "800", height: "450"},
@@ -83,10 +83,9 @@ html(lang="zh-CN")
               tab_id: "v-pills-market-tab",
               tab_target: "#v-pills-market",
               tab_content_id: "v-pills-market",
-              title: "数据发布与交易",
+              title: "Data Publishing and Subscribing",
               contents: [
-                "用户可以上传Excel/CSV等结构化数据文件到DIU，或者将自己的数据源（数据库，数据API）连接到DIU，并发布到数据市场供其他用户订购使用, " +
-                "以及订购其他用户发布的数据。"
+                "Users can upload structured data files such as Excel/CSV to DIU, or connect their own data sources (databases, data apis) to DIU, and publish to the data market for other users to order, and ordering data published by other users."
               ],
               figures: [
                 {source: "assets/images/data_market.png", width: "800", height: "450"}
