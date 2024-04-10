@@ -1,6 +1,6 @@
 {
-    "title": "A simple site template",
-    "name": "simple-site",
+    "title": "矩阵工场产品DIU官方站点",
+    "name": "DIU-official-site",
     "version": "1.0.0",
     "scripts": {
         "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
@@ -12,13 +12,13 @@
         "start": "npm run build && node scripts/start.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
     },
-    "description": "A simple site template witten in Javascript with PUG and Bootstrap",
+    "description": "矩阵工场产品DIU官方站点",
     "keywords": [
     ],
     "homepage": "https://matrixworks.cn/",
-    "author": "yu@matrix.works",
+    "author": "contact@matrix.works",
     "contributors": [
-        "Matrixworks (https://matrix.works/)"
+        "矩阵工场 (https://matrix.works/)"
     ],
     "dependencies": {
         "bootstrap": "5.3.2"
