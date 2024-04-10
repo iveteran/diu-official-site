@@ -45,6 +45,8 @@ html(lang="zh-CN")
               title: "数据发布与交易",
               summary: "用户可上传或连接到自己的数据源，并发布到数据市场, 也可以订购其他用户发布的数据",
               icon: "bi bi-shop-window",
+              //icon_bg_color: "bg-success",
+              //icon_color: "text-danger",
               details_link: "feature_details.html#v-pills-market-tab",
             }
           ]
@@ -54,7 +56,9 @@ html(lang="zh-CN")
             .container.px-5.my-5
                 .row.gx-5
                     each item in summaries
-                        + feature_summary(item.title, item.summary, item.icon, item.details_link)
+                        - let icon_bg_color = item.icon_bg_color || "bg-primary"
+                        - let icon_color = item.icon_color || "text-white"
+                        + feature_summary(item.title, item.summary, item.icon, icon_bg_color, icon_color, item.details_link)
 
         include includes/application_scenario.pug
         -
@@ -69,7 +73,7 @@ html(lang="zh-CN")
                   "DIU也可以对Word、PDF文件中的表格数据进行提取并上述处理。对于重复的或部份重复的文档会对其去重和归并，以及进行历史版本管理。",
                 "DIU并不是用来代替Excel的，而是对大量Excel文档进行后期管理，包括数据的权限管理，以及线上查询、发布和分享。"
               ],
-              cover: "assets/images/file_table_data.png",
+              covers: ["assets/images/file_table_data.png"],
               cover_position: "left",
             }, {
               title: "大型公司、企业集团和政府部门数据的归集管理",
@@ -79,7 +83,7 @@ html(lang="zh-CN")
                   "使用DIU可以对不同的IT数据库进行统一的归集管理、数据智能查询和数据图表化显示。",
                 "支持主流的数据库，如MySQL、PostgreSQL、Oracle、SQLServer，其它数据库可应客户要求定制开发"
               ],
-              cover: "assets/images/db_table_data.png",
+              covers: ["assets/images/db_table_data.png"],
               cover_position: "right",
             }, {
               title: "从事于数据处理的公司或开发者",
@@ -88,7 +92,7 @@ html(lang="zh-CN")
                 "从而减小他们对这些非核心系统的研发投入，并且可以将数据发布到数据市场，" +
                 "以及和其他数据开发者或使用者进行数据分享和交流。"
               ],
-              cover: "assets/images/for_data_developer.png",
+              covers: ["assets/images/for_data_developer.png"],
               cover_position: "left",
             }, {
               title: "行业、产业和社会公共数据的发布和交易",
@@ -100,7 +104,7 @@ html(lang="zh-CN")
                 "数据拥有者可以将数据发布到 DIU 的数据市场进行交易。",
                 "更加精准数据检索，使数据需求者更容易找到数据发布者的数据。"
               ],
-              cover: "assets/images/industrial_data.png",
+              covers: ["assets/images/industrial_data.png"],
               cover_position: "right",
             }, {
               title: "金融、宏观经济等其它社会共公数据",
@@ -110,13 +114,13 @@ html(lang="zh-CN")
                 "数据发布机构可以使用 DIU 代替以往在官网以网页或 Excel 文档形式的数据发布，可避免在网站的层层链接中寻找发布的数据。",
                 "可以通过 DIU 的 PC 客户端软件快速、便捷地上传数据文档。"
               ],
-              cover: "assets/images/for_finance.png",
+              covers: ["assets/images/for_finance.png"],
               cover_position: "left",
             }, {
               title: "DIU与相似产品的功能对比",
               contents: [
               ],
-              cover: "assets/images/diu_compares_with_others.png",
+              covers: ["assets/images/diu_compares_with_others.png"],
               cover_position: "top",
             }
           ]
@@ -128,6 +132,6 @@ html(lang="zh-CN")
                     h3.fw-bolder 应用场景
                 .row.gx-5.justify-content-center
                     each item in scenarios
-                      + application_scenario(item.title, item.contents, item.cover, item.cover_position)
+                      + application_scenario(item.title, item.contents, item.covers, item.cover_position)
 
         include includes/footer.pug
