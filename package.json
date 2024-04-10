@@ -1,6 +1,6 @@
 {
     "title": "The official site of DIU",
-    "name": "DIU-official-site",
+    "name": "diu-official-site",
     "version": "1.0.0",
     "scripts": {
         "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
@@ -14,8 +14,8 @@
     },
     "description": "The official site of DIU from Matrixworks",
     "keywords": [],
-    "homepage": "https://matrixworks.cn/",
-    "author": "yu@matrix.works",
+    "homepage": "https://matrix.works/",
+    "author": "contact@matrix.works",
     "contributors": [
         "Matrixworks (https://matrix.works/)"
     ],
