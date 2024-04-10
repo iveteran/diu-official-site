@@ -42,7 +42,7 @@ mixin show_feature_details(item)
             each fig in figures
                 - let width = fig.width || "90%"
                 - let height = fig.height || "90%"
-                img(src=fig.source, alt=figures_alt, width=width, height=height).rounded.img-fluied
+                img(srcset=fig.source, alt=figures_alt, width=width, height=height).rounded.img-fluied
 
     mixin show_content_pane(item)
         .tab-pane.fade.lh-lg(

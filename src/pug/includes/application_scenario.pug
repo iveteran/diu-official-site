@@ -1,5 +1,5 @@
 //- Application scenario
-mixin application_scenario(title, contents, cover, cover_position)
+mixin application_scenario(title, contents, covers, cover_position)
 
   mixin show_contents(contents)
       ul.list-group.list-group-flush
@@ -7,8 +7,19 @@ mixin application_scenario(title, contents, cover, cover_position)
              li.list-group-item
                  .text.lh-lg #{content}
 
-  mixin show_cover(cover, alt, width="100%", height="100%")
-      img(src=cover, alt=alt, width=width, height=height).rounded
+  mixin show_cover(covers, alt, width="100%", height="100%")
+    - if (!covers) return;
+    picture.rounded
+        img(src=covers[0], alt=alt, width=width, height=height)
+        if covers.length > 1
+          each cover in covers
+            - let extension = cover.split('.').pop();
+            - let filetype = "image/" +  (extension === 'svg' ? extension + "+xml" : extension);
+            case extension
+              when "webp"
+                source(srcset=cover, type=filetype, media="(min-width: 800px)")
+              default
+                source(srcset=cover, type=filetype)
 
   .card.mb-5.mb-xl-5
       .card-body.p-5
@@ -17,7 +28,7 @@ mixin application_scenario(title, contents, cover, cover_position)
               when "left"
                 .row.mt-4
                   .col-xl-8
-                      + show_cover(cover, title)
+                      + show_cover(covers, title)
                   .col-xl-4
                       + show_contents(contents)
               when "right"
@@ -25,14 +36,14 @@ mixin application_scenario(title, contents, cover, cover_position)
                   .col-xl-4
                       + show_contents(contents)
                   .col-xl-8
-                      + show_cover(cover, title)
+                      + show_cover(covers, title)
               when "top"
                 div
                   .m-md-5.text-center
-                      + show_cover(cover, title)
+                      + show_cover(covers, title)
                   + show_contents(contents)
               when "bottom"
                 div
                   + show_contents(contents)
                   .m-md-5.text-center
-                      + show_cover(cover, title)
+                      + show_cover(covers, title)

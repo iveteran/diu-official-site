@@ -74,7 +74,7 @@ html(lang="en")
                   "DIU can also extract and process the table data in Word and PDF files. Duplicate or partially duplicate documents are de-duplicated and merged, as well as historical version management.",
                 "DIU is not used to replace Excel, but to perform post-management for a large number of Excel documents, including permission management of data, as well as online query, publishing and sharing."
               ],
-              cover: "assets/images/diu_supports_files.svg",
+              covers: ["assets/images/diu_supports_files.svg", "assets/images/diu_supports_files.webp"],
               cover_position: "top",
             }, {
               title: "Data collection and management of large companies, enterprise groups and government departments",
@@ -84,7 +84,7 @@ html(lang="en")
                   "Using DIU, different IT databases can be unified collection management, data intelligent query and data graphical display.",
                 "Support mainstream databases, such as MySQL, PostgreSQL, Oracle, SQLServer, other databases can be customized according to customer requirements"
               ],
-              cover: "assets/images/diu_supports_databases.svg",
+              covers: ["assets/images/diu_supports_databases.svg", "assets/images/diu_supports_databases.webp"],
               cover_position: "right",
             }, {
               title: "The companies or developers engaged in data processing",
@@ -93,7 +93,7 @@ html(lang="en")
                 "So they can reduce their R&D investment in these non-core systems and release the data to the data marketplace," +
                 "And share and communicate with other data developers or users."
               ],
-              cover: "assets/images/diu_for_developers.svg",
+              covers: ["assets/images/diu_for_developers.svg", "assets/images/diu_for_developers.webp"],
               cover_position: "left",
             }, {
               title: "Publishing and subscribing of public data for industry and society",
@@ -105,7 +105,7 @@ html(lang="en")
                 "Data owners can publish data to DIU's data marketplace for subscribing.",
                 "More accurate data retrieval makes it easier for data demanders to find data from data publishers."
               ],
-              cover: "assets/images/diu_publishing_subscribing.svg",
+              covers: ["assets/images/diu_publishing_subscribing.svg", "assets/images/diu_publishing_subscribing.webp"],
               cover_position: "right",
             }, {
               title: "Financial, macroeconomic and social public data",
@@ -115,7 +115,7 @@ html(lang="en")
                 "Data publishing organizations can use DIU to replace the previous data release in the form of web pages or Excel documents on the official website, which can avoid searching for published data in the layers of links on the website.",
                 "Data files can be uploaded quickly and easily through DIU's PC client software."
               ],
-              cover: "assets/images/diu_as_data_center.svg",
+              covers: ["assets/images/diu_as_data_center.svg", "assets/images/diu_as_data_center.webp"],
               cover_position: "left",
             }
           ]
@@ -127,7 +127,7 @@ html(lang="en")
                     h3.fw-bolder Application scenarios
                 .row.gx-5.justify-content-center
                     each item in scenarios
-                      + application_scenario(item.title, item.contents, item.cover, item.cover_position)
+                      + application_scenario(item.title, item.contents, item.covers, item.cover_position)
 
         // looking for partners section
         section.bg-light.py-2.border-bottom
